@@ -1,0 +1,12 @@
+Readme
+
+Description
+A server to serve restaurant data, accept orders and record/serve restaurant stats. A server capable of managing the restaurant data that could be used for those previous components. The server will be responsible for storing restaurant data for any number of restaurants. The server will also provide functionality to allow a user to add new restaurants and modify the information/menu of restaurants currently stored on the server. Done using the Express module.
+
+Instructions for running server
+	Go to the folder where the server is located and write the following:
+	npm install
+	npm start
+
+Design decisions
+	A unique item id was created by choosing a random number and comparing it against an array of all current restaurant IDs. Once all the numbers in that range have been used for IDs, the range is doubled, to allow more possible IDs.
