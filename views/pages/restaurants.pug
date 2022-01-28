@@ -1,0 +1,12 @@
+html
+	head
+		title All Restaurants
+		link(rel="stylesheet" type="text/css" href="restaurants.css")
+	body
+		include ../partials/header
+		br
+		h2 Select Restaurant: 
+		div(id="links")
+			each restaurant in Object.keys(restaurants)
+				a(href="/restaurant/"+restaurants[restaurant].id) #{restaurants[restaurant].name}
+				br

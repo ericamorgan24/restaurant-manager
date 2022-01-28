@@ -1,0 +1,20 @@
+html 
+	head
+		title Add Restaurant
+		link(rel="stylesheet" type="text/css" href="addrestaurant.css")
+	body
+		include ../partials/header
+		br
+		h2 Add a New Restaurant:
+		div(id="newRest")
+			label(for="name") Name:
+				input(type="text" id="name" name="name")
+			br
+			label(for="fee") Delivery Fee: $
+				input(type="text" id="fee" name="fee")
+			br
+			label(for="min") Minimum Order: $
+				input(type="text" id="min" name="min")
+			br
+			input(type="submit" value="Submit" onclick="add()")
+		script(src="client-addrestaurant.js")

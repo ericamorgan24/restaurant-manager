@@ -1,0 +1,25 @@
+body{
+	font-family: Arial, sans-serif;
+	background-color: lightgrey;
+}
+#nav a{
+  /*display: block;*/
+  color: white;
+  padding: 10px 10px;
+  text-decoration: none;
+  background-color: black;
+}
+#nav a:hover{
+	color: black;
+  	background-color: white;
+}
+.menuText{
+	font-weight: bold;
+	text-align: left;
+	font-size:150%;
+}
+.category{
+	font-weight: bold;
+	text-align: left;
+	font-size:125%;
+}

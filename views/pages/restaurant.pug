@@ -1,0 +1,48 @@
+html 
+	head
+		title A Restaurant
+		link(rel="stylesheet" type="text/css" href="restaurant.css")
+	body(onload="init()")
+		include ../partials/header
+		br
+		div(id="modify")
+			div Name: 
+				input(type="text" id="name" value=restaurant.name)
+			div Delivery Fee: $
+				input(type="text" id="fee" value=restaurant.delivery_fee.toFixed(2))
+			div Minimum Order: $
+				input(type="text" id="min" value=restaurant.min_order.toFixed(2))
+			br
+			div(id="createCat") New Category:
+				input(type="text" id="newCat")
+				input(type="submit" value="Add Category" onclick="addCat()")
+			div(id="createItem") New Item:
+				div Category: 
+					select(id="categories")
+						each category in Object.keys(restaurant.menu)
+							option(value=category) #{category}
+				div Name: 
+					input(type="text" id="newItemName")
+				div Price: $
+					input(type="text" id="newItemPrice")
+				div Description:  
+					div
+						textarea(rows="6" cols="60" id="newItemDescription")
+				input(type="submit" value="Add Item" onclick="addItem()")
+			input(type="submit" value="Save Changes" onclick="save()")
+		br
+		div(id="menu") 
+			div(class="menuText") Menu:
+			br
+			each category in Object.keys(restaurant.menu)
+				div(id=category)
+					div(class="category") #{category}: 
+					br
+					each subcat in Object.keys(restaurant.menu[category])
+						div ID: #{subcat}
+						div #{restaurant.menu[category][subcat].name}
+						div #{restaurant.menu[category][subcat].description}
+						div $#{restaurant.menu[category][subcat].price.toFixed(2)}
+						br
+		div(id="restID" style="display:none") #{restaurant.id} 
+		script(src="client-restaurant.js")
